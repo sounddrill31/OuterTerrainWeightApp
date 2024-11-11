@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuterTerrainWeightApp", "OuterTerrainWeightApp\OuterTerrainWeightApp\OuterTerrainWeightApp.csproj", "{D724DB54-A0FB-4BBD-AF3E-F1F53B2B7989}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuterTerrainWeightApp.Android", "OuterTerrainWeightApp\OuterTerrainWeightApp.Android\OuterTerrainWeightApp.Android.csproj", "{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuterTerrainWeightApp.Desktop", "OuterTerrainWeightApp\OuterTerrainWeightApp.Desktop\OuterTerrainWeightApp.Desktop.csproj", "{25C4F09D-2262-41F1-819C-B039CB685778}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuterTerrainWeightApp.iOS", "OuterTerrainWeightApp\OuterTerrainWeightApp.iOS\OuterTerrainWeightApp.iOS.csproj", "{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OuterTerrainWeightApp.Browser", "OuterTerrainWeightApp\OuterTerrainWeightApp.Browser\OuterTerrainWeightApp.Browser.csproj", "{D3CD20C1-C08A-4139-BD69-8BD624AD5C0B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D724DB54-A0FB-4BBD-AF3E-F1F53B2B7989}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D724DB54-A0FB-4BBD-AF3E-F1F53B2B7989}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D724DB54-A0FB-4BBD-AF3E-F1F53B2B7989}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D724DB54-A0FB-4BBD-AF3E-F1F53B2B7989}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7E0EB6A-7C6A-4573-B2A0-7999AE57AEBD}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{25C4F09D-2262-41F1-819C-B039CB685778}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C4F09D-2262-41F1-819C-B039CB685778}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C4F09D-2262-41F1-819C-B039CB685778}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C4F09D-2262-41F1-819C-B039CB685778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B35D2A70-BA83-4E4B-AEE8-CCA4A9932D26}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D3CD20C1-C08A-4139-BD69-8BD624AD5C0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3CD20C1-C08A-4139-BD69-8BD624AD5C0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3CD20C1-C08A-4139-BD69-8BD624AD5C0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3CD20C1-C08A-4139-BD69-8BD624AD5C0B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
