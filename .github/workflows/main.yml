@@ -1,7 +1,7 @@
 name: Build and Upload .NET Project
 
-#Edit VowelCountApp/VowelCountApp.Android and VowelCountApp/VowelCountApp.Desktop to your app project folder
-#Edit VowelCountApp to your app name
+#Edit OuterTerrainWeightApp/OuterTerrainWeightApp.Android and OuterTerrainWeightApp/OuterTerrainWeightApp.Desktop to your app project folder
+#Edit OuterTerrainWeightApp to your app name
 
 on:
   push:
@@ -48,27 +48,27 @@ jobs:
     - name: Build
       if: matrix.os != 'ubuntu-24.04' 
       # 24.04 is android 
-      run: dotnet build VowelCountApp/VowelCountApp.Desktop --configuration Release #--no-restore
+      run: dotnet build OuterTerrainWeightApp/OuterTerrainWeightApp.Desktop --configuration Release #--no-restore
 
     - name: Publish
       if: matrix.os != 'ubuntu-24.04' 
       # 24.04 is android 
-      run: dotnet publish VowelCountApp/VowelCountApp.Desktop --configuration Release --output ./output
+      run: dotnet publish OuterTerrainWeightApp/OuterTerrainWeightApp.Desktop --configuration Release --output ./output
 
     - name: Build and Publish For android
       if: matrix.os == 'ubuntu-24.04' 
       # 24.04 is android 
       run: |
-       dotnet build VowelCountApp/VowelCountApp.Android --configuration Release
-       dotnet publish VowelCountApp/VowelCountApp.Android --configuration Release --output ./output
+       dotnet build OuterTerrainWeightApp/OuterTerrainWeightApp.Android --configuration Release
+       dotnet publish OuterTerrainWeightApp/OuterTerrainWeightApp.Android --configuration Release --output ./output
 
     - name: Zip folder on Linux 
       if: matrix.os == 'ubuntu-latest'
-      run: zip -r VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip ./output/*
+      run: zip -r OuterTerrainWeightApp-${{ matrix.os }}-${{ github.run_id }}.zip ./output/*
 
     - name: Zip folder on Windows
       if: matrix.os == 'windows-latest'
-      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip'"
+      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'OuterTerrainWeightApp-${{ matrix.os }}-${{ github.run_id }}.zip'"
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v4
@@ -80,10 +80,10 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
           files: |
-            VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip
+            OuterTerrainWeightApp-${{ matrix.os }}-${{ github.run_id }}.zip
             output/*.apk
           #android doesn't need Zipping, so direct upload
-          name: VowelCountApp-${{ github.run_id }}
+          name: OuterTerrainWeightApp-${{ github.run_id }}
           tag_name: ${{ github.run_id }}
       env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

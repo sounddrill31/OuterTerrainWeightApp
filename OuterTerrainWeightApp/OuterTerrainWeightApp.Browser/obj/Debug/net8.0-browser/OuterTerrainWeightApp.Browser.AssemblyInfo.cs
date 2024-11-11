@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OuterTerrainWeightApp.Browser")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7cccf6b30da50fbbe3edf06499e36cbe41f0d47")]
 [assembly: System.Reflection.AssemblyProductAttribute("OuterTerrainWeightApp.Browser")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OuterTerrainWeightApp.Browser")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
