@@ -1,0 +1,89 @@
+name: Build and Upload .NET Project
+
+#Edit VowelCountApp/VowelCountApp.Android and VowelCountApp/VowelCountApp.Desktop to your app project folder
+#Edit VowelCountApp to your app name
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest, ubuntu-24.04 ] # 24.04 is for android
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x'  # Specify your .NET version here
+
+    - name: Set up JDK 17
+      if: matrix.os == 'ubuntu-24.04' 
+      # 24.04 is android 
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+
+    - name: Setup Android SDK
+      if: matrix.os == 'ubuntu-24.04' 
+      # 24.04 is android 
+      uses: android-actions/setup-android@v3
+
+    - name: Restore dependencies
+      run: |
+        dotnet workload restore
+
+    - name: Build
+      if: matrix.os != 'ubuntu-24.04' 
+      # 24.04 is android 
+      run: dotnet build VowelCountApp/VowelCountApp.Desktop --configuration Release #--no-restore
+
+    - name: Publish
+      if: matrix.os != 'ubuntu-24.04' 
+      # 24.04 is android 
+      run: dotnet publish VowelCountApp/VowelCountApp.Desktop --configuration Release --output ./output
+
+    - name: Build and Publish For android
+      if: matrix.os == 'ubuntu-24.04' 
+      # 24.04 is android 
+      run: |
+       dotnet build VowelCountApp/VowelCountApp.Android --configuration Release
+       dotnet publish VowelCountApp/VowelCountApp.Android --configuration Release --output ./output
+
+    - name: Zip folder on Linux 
+      if: matrix.os == 'ubuntu-latest'
+      run: zip -r VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip ./output/*
+
+    - name: Zip folder on Windows
+      if: matrix.os == 'windows-latest'
+      run: powershell -Command "Compress-Archive -Path 'output/*' -DestinationPath 'VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip'"
+
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: dotnet-artifacts-${{ matrix.os }}
+        path: ./output
+
+    - name: Upload to Release
+      uses: softprops/action-gh-release@v1
+      with:
+          files: |
+            VowelCountApp-${{ matrix.os }}-${{ github.run_id }}.zip
+            output/*.apk
+          #android doesn't need Zipping, so direct upload
+          name: VowelCountApp-${{ github.run_id }}
+          tag_name: ${{ github.run_id }}
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
