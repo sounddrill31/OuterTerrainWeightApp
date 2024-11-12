@@ -24,7 +24,36 @@
         </ExperimentalAcrylicBorder>
         
         <StackPanel Margin="20" HorizontalAlignment="Center" VerticalAlignment="Center">
-            
+            <TextBlock HorizontalAlignment="Left" Margin="20 5" FontSize="18" FontWeight="Bold">Earth Weight(kg): </TextBlock>
+                <TextBox Name="EarthWeightString" Watermark="Enter Normal Weight" AcceptsReturn="True"></TextBox>
+            <Separator></Separator>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Mercury Weight is(kg):</TextBlock>
+                <TextBox Name="MerWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Venus Weight is(kg):</TextBlock>
+                <TextBox Name="VenWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Earth Weight is(kg):</TextBlock>
+                <TextBox Name="EarWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Mars Weight is(kg):</TextBlock>
+                <TextBox Name="MarWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Jupiter Weight is(kg):</TextBlock>
+                <TextBox Name="JupWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Saturn Weight is(kg):</TextBlock>
+                <TextBox Name="SatWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Uranus Weight is(kg):</TextBlock>
+                <TextBox Name="UrWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Neptune Weight is(kg):</TextBlock>
+                <TextBox Name="NepWeightString" AcceptsReturn="True"></TextBox>
+            <TextBlock HorizontalAlignment="Left" Margin="0 5">Moon Weight is(kg):</TextBlock>
+                <TextBox Name="MoonWeightString" AcceptsReturn="True"></TextBox>
+
+            <Button Content="Count" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center" Margin="45 5" Click="Button_OnClick" />
+            <Button Content="Exit" 
+                    HorizontalAlignment="Left" VerticalAlignment="Center" Margin="50 5" Click="Button_OnClick_Exit" />
+
+
+
+
         </StackPanel>
 
     </Panel>
