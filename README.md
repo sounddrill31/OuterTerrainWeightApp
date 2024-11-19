@@ -1,4 +1,4 @@
-# Vowel Count App [![Build and Upload .NET Project](https://github.com/sounddrill31/OuterTerrainWeightApp_CrossPlatform/actions/workflows/main.yml/badge.svg)](https://github.com/sounddrill31/OuterTerrainWeightApp_CrossPlatform/actions/workflows/main.yml)
+# Vowel Count App [![Build and Upload .NET Project](https://github.com/sounddrill31/OuterTerrainWeightApp/actions/workflows/main.yml/badge.svg)](https://github.com/sounddrill31/OuterTerrainWeightApp_CrossPlatform/actions/workflows/main.yml)
 
 Simple C# App built using Avalonia UI. It checks the letters in the string entered and sees how many vowels are present(AEIOUaeiou)
 
